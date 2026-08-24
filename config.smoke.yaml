@@ -1,0 +1,46 @@
+poll_interval_seconds: 120
+database_path: data/discord-test-1.db
+seen_retention_days: 30
+max_provider_concurrency: 2
+
+provider:
+  kind: fixture
+  fixture_path: fixtures/listings.json
+
+discord:
+  username: Vinted Deal Finder
+
+score_defaults:
+  weights:
+    price: 0.75
+    condition: 0.15
+    seller: 0.10
+  target_discount_pct: 40
+  min_discount_pct: 20
+  min_score: 70
+
+watches:
+  - id: smoke_nike
+    enabled: true
+    query: Nike Air Max 90
+    exclude_keywords:
+      - replica
+      - fake
+    brands:
+      - Nike
+    categories:
+      - Shoes
+    sizes:
+      - "42"
+    allowed_conditions:
+      - new_with_tags
+      - new_without_tags
+      - very_good
+    currency: HUF
+    max_item_price_huf: 22000
+    reference_all_in_value_huf: 30000
+    fallback_buyer_fee_huf: 1000
+    fallback_shipping_huf: 1500
+    target_discount_pct: 40
+    min_discount_pct: 20
+    min_score: 70

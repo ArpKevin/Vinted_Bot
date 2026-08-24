@@ -1,0 +1,52 @@
+{
+  "listings": [
+    {
+      "watch_ids": ["smoke_nike", "example_nike_air_max_90"],
+      "provider": "fixture",
+      "listing_id": "fixture-qualifying-001",
+      "url": "https://example.invalid/listings/fixture-qualifying-001",
+      "title": "Nike Air Max 90 white trainers",
+      "item_price_huf": 14000,
+      "currency": "HUF",
+      "brand": "Nike",
+      "category": "Shoes",
+      "size": "42",
+      "condition": "very_good",
+      "image_url": "https://example.invalid/images/fixture-qualifying-001.jpg",
+      "seller_name": "Fixture Seller",
+      "seller_rating": 4.9,
+      "seller_review_count": 24,
+      "buyer_fee_huf": 900,
+      "shipping_huf": 1300,
+      "created_at": "2026-08-20T20:00:00Z",
+      "raw_metadata": {
+        "fixture": true,
+        "scenario": "qualifying"
+      }
+    },
+    {
+      "watch_ids": ["smoke_nike", "example_nike_air_max_90"],
+      "provider": "fixture",
+      "listing_id": "fixture-nonqualifying-002",
+      "url": "https://example.invalid/listings/fixture-nonqualifying-002",
+      "title": "Nike Air Max 90 black trainers",
+      "item_price_huf": 21000,
+      "currency": "HUF",
+      "brand": "Nike",
+      "category": "Shoes",
+      "size": "42",
+      "condition": "good",
+      "seller_name": "Another Fixture Seller",
+      "seller_rating": 4.4,
+      "seller_review_count": 3,
+      "buyer_fee_huf": 1200,
+      "shipping_huf": 1500,
+      "created_at": "2026-08-20T20:01:00Z",
+      "raw_metadata": {
+        "fixture": true,
+        "scenario": "below_threshold"
+      }
+    }
+  ]
+}
+

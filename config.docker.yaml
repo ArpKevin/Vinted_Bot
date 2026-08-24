@@ -1,0 +1,42 @@
+poll_interval_seconds: 120
+database_path: /data/vinted-market.db
+seen_retention_days: 30
+max_provider_concurrency: 2
+
+provider:
+  kind: public_vinted_html
+  request_timeout_seconds: 20
+  market_page_count: 3
+  market_cache_seconds: 1800
+  user_agent: VintedDealFinder/0.2 (+local personal-use monitor)
+
+discord:
+  username: Vinted Deal Finder
+
+market_defaults:
+  target_discount_pct: 40
+  min_discount_pct: 25
+  min_confidence: 0.55
+  min_comparables: 5
+  max_comparables: 30
+
+watches:
+  - id: womens_jeans
+    enabled: true
+    valuation_mode: market
+    catalog_url: https://www.vinted.hu/catalog/183-jeans?order=newest_first
+    notify_existing_on_first_run: false
+    exclude_keywords: [gyerek, kislány, fiú]
+    categories: [Women's jeans]
+    allowed_conditions: [new_with_tags, new_without_tags, very_good, good]
+    currency: HUF
+
+  - id: womens_trousers
+    enabled: true
+    valuation_mode: market
+    catalog_url: https://www.vinted.hu/catalog/9-trousers-and-leggings?order=newest_first
+    notify_existing_on_first_run: false
+    exclude_keywords: [legging, leggings, harisnya, sportlegging, gyerek, kislány, fiú]
+    categories: [Women's trousers]
+    allowed_conditions: [new_with_tags, new_without_tags, very_good, good]
+    currency: HUF

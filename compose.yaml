@@ -1,0 +1,26 @@
+services:
+  deal-finder:
+    build: .
+    restart: unless-stopped
+    environment:
+      CONFIG_PATH: /app/config.yaml
+      DRY_RUN: ${DRY_RUN:-true}
+      DISCORD_WEBHOOK_URL: ${DISCORD_WEBHOOK_URL:-}
+    volumes:
+      - ./config.docker.yaml:/app/config.yaml:ro
+      - deal-finder-data:/data
+    ports:
+      - "127.0.0.1:8080:8080"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/healthz', timeout=3)"
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+
+volumes:
+  deal-finder-data:
